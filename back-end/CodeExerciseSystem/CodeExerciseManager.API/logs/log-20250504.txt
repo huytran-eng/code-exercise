@@ -1,0 +1,20 @@
+2025-05-04 10:58:30.750 +07:00 [ERR] Validation failed when creating tag Tên tag không được để trống
+System.ArgumentException: Tên tag không được để trống
+   at CodeExercise.Core.Entities.Tag.Validate(String name, String displayName) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Domain\Entities\Tag.cs:line 34
+   at CodeExercise.Core.Entities.Tag..ctor(String name, String displayName, Guid createdById) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Domain\Entities\Tag.cs:line 12
+   at CodeExercise.Application.Services.TagService.AdminCreateTagAsync(CreateTagInDTO createTagRequestDTO, Guid userId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\TagService.cs:line 40
+2025-05-04 11:08:44.772 +07:00 [ERR] Validation failed when creating tag Tên tag không được để trống
+System.ArgumentException: Tên tag không được để trống
+   at CodeExercise.Core.Entities.Tag.Validate(String name, String displayName) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Domain\Entities\Tag.cs:line 34
+   at CodeExercise.Core.Entities.Tag..ctor(String name, String displayName, Guid createdById) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Domain\Entities\Tag.cs:line 12
+   at CodeExercise.Application.Services.TagService.AdminCreateTagAsync(CreateTagInDTO createTagRequestDTO, Guid userId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\TagService.cs:line 40
+2025-05-04 13:50:15.169 +07:00 [ERR] Validation failed when creating tag Tên tag không được để trống
+System.ArgumentException: Tên tag không được để trống
+   at CodeExercise.Core.Entities.Tag.Validate(String name, String displayName) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Domain\Entities\Tag.cs:line 34
+   at CodeExercise.Core.Entities.Tag..ctor(String name, String displayName, Guid createdById) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Domain\Entities\Tag.cs:line 12
+   at CodeExercise.Application.Services.TagService.AdminCreateTagAsync(CreateTagInDTO createTagRequestDTO, Guid userId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\TagService.cs:line 40
+2025-05-04 13:50:38.416 +07:00 [ERR] Validation failed when creating tag Tên tag không được để trống
+System.ArgumentException: Tên tag không được để trống
+   at CodeExercise.Core.Entities.Tag.Validate(String name, String displayName) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Domain\Entities\Tag.cs:line 34
+   at CodeExercise.Core.Entities.Tag..ctor(String name, String displayName, Guid createdById) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Domain\Entities\Tag.cs:line 12
+   at CodeExercise.Application.Services.TagService.AdminCreateTagAsync(CreateTagInDTO createTagRequestDTO, Guid userId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\TagService.cs:line 40

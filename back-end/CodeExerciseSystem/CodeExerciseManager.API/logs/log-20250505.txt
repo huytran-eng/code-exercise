@@ -1,0 +1,16 @@
+2025-05-05 21:02:55.234 +07:00 [ERR] An error occurred when creating a tag The type initializer for 'CodeExercise.Core.Common.MessageMapper' threw an exception.
+System.TypeInitializationException: The type initializer for 'CodeExercise.Core.Common.MessageMapper' threw an exception.
+ ---> System.IO.FileNotFoundException: Could not find file 'C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExerciseManager.API\message-mapping.json'.
+File name: 'C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExerciseManager.API\message-mapping.json'
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.ReadAllText(String path, Encoding encoding)
+   at CodeExercise.Core.Common.MessageMapper..cctor() in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Domain\Common\MessageMapper.cs:line 11
+   --- End of inner exception stack trace ---
+   at CodeExercise.Core.Common.MessageMapper.GetMessage(MessageCodeEnum code) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Domain\Common\MessageMapper.cs:line 16
+   at CodeExercise.Core.Common.ResponseResult`1..ctor(Boolean success, Int32 statusCode, MessageCodeEnum messageCode, T data) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Domain\Common\ResponseResult.cs:line 20
+   at CodeExercise.Core.Common.ResponseResult`1.FailureResponse(Int32 statusCode, MessageCodeEnum messageCode) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Domain\Common\ResponseResult.cs:line 31
+   at CodeExercise.Application.Services.TagService.AdminCreateTagAsync(CreateTagInDTO createTagRequestDTO, Guid userId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\TagService.cs:line 37

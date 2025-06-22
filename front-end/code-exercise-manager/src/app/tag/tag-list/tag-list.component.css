@@ -1,0 +1,60 @@
+.search-page {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.datagrid-area {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+tr {
+  background-color: #7da8d3 !important; /* Dark background color */
+  color: #ffffff; /* White text color */
+}
+
+.table-hover tbody tr:hover td,
+.table-hover tbody tr:hover th {
+  background-color: #d0e7ff;
+}
+
+.form-inline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.form-inline label {
+  white-space: nowrap;
+  margin-bottom: 0;
+  min-width: 90px; /* force labels to align on the same baseline */
+}
+.table-container {
+  height: 400px;
+  overflow-y: auto;
+}
+
+.table-container thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.action-icon {
+  margin-right: 8px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.view-icon {
+  color: #2196f3; /* blue */
+}
+
+.edit-icon {
+  color: #4caf50; /* green */
+}

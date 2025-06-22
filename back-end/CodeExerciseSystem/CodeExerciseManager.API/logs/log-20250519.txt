@@ -1,0 +1,221 @@
+2025-05-19 21:02:26.750 +07:00 [ERR] An error occurred while creating the problem: Explicit conversion from data type numeric to uniqueidentifier is not allowed.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Explicit conversion from data type numeric to uniqueidentifier is not allowed.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__193_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 662
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminCreateProblemAsync(ProblemDTO problem, List`1 testCases, List`1 templateCodes, List`1 problemTags) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 25
+   at CodeExercise.Application.Services.ProblemService.AdminCreateProblemAsync(AdminCreateProblemInDTO problemDTO, Guid userId)
+ClientConnectionId:9991d33e-1348-4e25-904b-6005176dd425
+Error Number:529,State:1,Class:16
+2025-05-19 21:04:15.880 +07:00 [ERR] An error occurred while creating the problem: Explicit conversion from data type numeric to uniqueidentifier is not allowed.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Explicit conversion from data type numeric to uniqueidentifier is not allowed.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__193_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 662
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminCreateProblemAsync(ProblemDTO problem, List`1 testCases, List`1 templateCodes, List`1 problemTags)
+   at CodeExercise.Application.Services.ProblemService.AdminCreateProblemAsync(AdminCreateProblemInDTO problemDTO, Guid userId)
+ClientConnectionId:9991d33e-1348-4e25-904b-6005176dd425
+Error Number:529,State:1,Class:16
+2025-05-19 21:06:43.674 +07:00 [ERR] An error occurred while creating the problem: Cannot insert the value NULL into column 'Requirements', table 'CodeExercise.dbo.Problem'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Requirements', table 'CodeExercise.dbo.Problem'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__193_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 662
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminCreateProblemAsync(ProblemDTO problem, List`1 testCases, List`1 templateCodes, List`1 problemTags)
+   at CodeExercise.Application.Services.ProblemService.AdminCreateProblemAsync(AdminCreateProblemInDTO problemDTO, Guid userId)
+ClientConnectionId:9991d33e-1348-4e25-904b-6005176dd425
+Error Number:515,State:2,Class:16
+2025-05-19 21:07:54.817 +07:00 [ERR] An error occurred while creating the problem: Cannot insert the value NULL into column 'TemplateCode', table 'CodeExercise.dbo.Problem'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'TemplateCode', table 'CodeExercise.dbo.Problem'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__193_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteImplAsync(IDbConnection cnn, CommandDefinition command, Object param) in /_/Dapper/SqlMapper.Async.cs:line 662
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminCreateProblemAsync(ProblemDTO problem, List`1 testCases, List`1 templateCodes, List`1 problemTags)
+   at CodeExercise.Application.Services.ProblemService.AdminCreateProblemAsync(AdminCreateProblemInDTO problemDTO, Guid userId)
+ClientConnectionId:9991d33e-1348-4e25-904b-6005176dd425
+Error Number:515,State:2,Class:16
+2025-05-19 21:08:20.539 +07:00 [ERR] An error occurred while creating the problem: Must declare the scalar variable "@IsSample".
+Microsoft.Data.SqlClient.SqlException (0x80131904): Must declare the scalar variable "@IsSample".
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__193_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteMultiImplAsync(IDbConnection cnn, CommandDefinition command, IEnumerable multiExec) in /_/Dapper/SqlMapper.Async.cs:line 640
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminCreateProblemAsync(ProblemDTO problem, List`1 testCases, List`1 templateCodes, List`1 problemTags)
+   at CodeExercise.Application.Services.ProblemService.AdminCreateProblemAsync(AdminCreateProblemInDTO problemDTO, Guid userId)
+ClientConnectionId:9991d33e-1348-4e25-904b-6005176dd425
+Error Number:137,State:2,Class:15
+2025-05-19 21:10:17.664 +07:00 [ERR] An error occurred while creating the problem: Invalid column name 'ProblemId'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'ProblemId'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__193_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteMultiImplAsync(IDbConnection cnn, CommandDefinition command, IEnumerable multiExec) in /_/Dapper/SqlMapper.Async.cs:line 640
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminCreateProblemAsync(ProblemDTO problem, List`1 testCases, List`1 templateCodes, List`1 problemTags) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 30
+   at CodeExercise.Application.Services.ProblemService.AdminCreateProblemAsync(AdminCreateProblemInDTO problemDTO, Guid userId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 98
+ClientConnectionId:919e6feb-2ac3-4497-88fd-5b9114e7b512
+Error Number:207,State:1,Class:16
+2025-05-19 21:12:11.938 +07:00 [ERR] An error occurred while creating the problem: The INSERT statement conflicted with the FOREIGN KEY constraint "Fk_TestCase_CreatedBy". The conflict occurred in database "CodeExercise", table "dbo.User", column 'Id'.
+The statement has been terminated.
+Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "Fk_TestCase_CreatedBy". The conflict occurred in database "CodeExercise", table "dbo.User", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__193_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteMultiImplAsync(IDbConnection cnn, CommandDefinition command, IEnumerable multiExec) in /_/Dapper/SqlMapper.Async.cs:line 640
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminCreateProblemAsync(ProblemDTO problem, List`1 testCases, List`1 templateCodes, List`1 problemTags) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 30
+   at CodeExercise.Application.Services.ProblemService.AdminCreateProblemAsync(AdminCreateProblemInDTO problemDTO, Guid userId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 98
+ClientConnectionId:919e6feb-2ac3-4497-88fd-5b9114e7b512
+Error Number:547,State:0,Class:16
+2025-05-19 21:14:25.448 +07:00 [ERR] An error occurred while creating the problem: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_TestCase_Problem". The conflict occurred in database "CodeExercise", table "dbo.Problem", column 'Id'.
+The statement has been terminated.
+Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_TestCase_Problem". The conflict occurred in database "CodeExercise", table "dbo.Problem", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__193_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteMultiImplAsync(IDbConnection cnn, CommandDefinition command, IEnumerable multiExec) in /_/Dapper/SqlMapper.Async.cs:line 640
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminCreateProblemAsync(ProblemDTO problem, List`1 testCases, List`1 templateCodes, List`1 problemTags) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 30
+   at CodeExercise.Application.Services.ProblemService.AdminCreateProblemAsync(AdminCreateProblemInDTO problemDTO, Guid userId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 98
+ClientConnectionId:21098965-0a60-46b0-bd4d-a33e7cd292a2
+Error Number:547,State:0,Class:16
+2025-05-19 21:15:43.820 +07:00 [ERR] An error occurred while creating the problem: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_TestCase_Problem". The conflict occurred in database "CodeExercise", table "dbo.Problem", column 'Id'.
+The statement has been terminated.
+Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_TestCase_Problem". The conflict occurred in database "CodeExercise", table "dbo.Problem", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__193_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteMultiImplAsync(IDbConnection cnn, CommandDefinition command, IEnumerable multiExec) in /_/Dapper/SqlMapper.Async.cs:line 640
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminCreateProblemAsync(ProblemDTO problem, List`1 testCases, List`1 templateCodes, List`1 problemTags) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 30
+   at CodeExercise.Application.Services.ProblemService.AdminCreateProblemAsync(AdminCreateProblemInDTO problemDTO, Guid userId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 98
+ClientConnectionId:21098965-0a60-46b0-bd4d-a33e7cd292a2
+Error Number:547,State:0,Class:16
+2025-05-19 21:16:23.867 +07:00 [ERR] An error occurred while creating the problem: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_TestCase_Problem". The conflict occurred in database "CodeExercise", table "dbo.Problem", column 'Id'.
+The statement has been terminated.
+Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_TestCase_Problem". The conflict occurred in database "CodeExercise", table "dbo.Problem", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__193_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteMultiImplAsync(IDbConnection cnn, CommandDefinition command, IEnumerable multiExec) in /_/Dapper/SqlMapper.Async.cs:line 640
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminCreateProblemAsync(ProblemDTO problem, List`1 testCases, List`1 templateCodes, List`1 problemTags) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 30
+   at CodeExercise.Application.Services.ProblemService.AdminCreateProblemAsync(AdminCreateProblemInDTO problemDTO, Guid userId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 98
+ClientConnectionId:21098965-0a60-46b0-bd4d-a33e7cd292a2
+Error Number:547,State:0,Class:16
+2025-05-19 21:18:29.207 +07:00 [ERR] An error occurred while creating the problem: Must declare the scalar variable "@ProgrammingLanguageId".
+Microsoft.Data.SqlClient.SqlException (0x80131904): Must declare the scalar variable "@ProgrammingLanguageId".
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, SqlCommand command, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption, Boolean shouldCacheForAlwaysEncrypted)
+   at Microsoft.Data.SqlClient.SqlCommand.CompleteAsyncExecuteReader(Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at Microsoft.Data.SqlClient.SqlCommand.InternalEndExecuteNonQuery(IAsyncResult asyncResult, Boolean isInternal, String endMethod)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryInternal(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.EndExecuteNonQueryAsync(IAsyncResult asyncResult)
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<InternalExecuteNonQueryAsync>b__193_1(IAsyncResult asyncResult)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.ExecuteMultiImplAsync(IDbConnection cnn, CommandDefinition command, IEnumerable multiExec) in /_/Dapper/SqlMapper.Async.cs:line 640
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminCreateProblemAsync(ProblemDTO problem, List`1 testCases, List`1 templateCodes, List`1 problemTags) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 35
+   at CodeExercise.Application.Services.ProblemService.AdminCreateProblemAsync(AdminCreateProblemInDTO problemDTO, Guid userId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 98
+ClientConnectionId:ac20c7de-016f-4e7e-ac34-7d4da33c8fd7
+Error Number:137,State:2,Class:15

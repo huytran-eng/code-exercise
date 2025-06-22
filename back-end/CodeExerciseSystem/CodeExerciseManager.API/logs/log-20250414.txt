@@ -1,0 +1,14 @@
+2025-04-14 19:53:16.402 +07:00 [ERR] An error occurred when getting tag detail Ambiguous column name 'Id'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Ambiguous column name 'Id'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at CodeExercise.Infrastructure.Persistence.Repositories.TagRepository.AdminGetTagByIdAsync(Guid id) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\TagRepository.cs:line 131
+   at CodeExercise.Application.Services.TagService.GetTagDetail(Guid id) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\TagService.cs:line 103
+ClientConnectionId:4c6b57fb-27cb-45ba-973b-254a7bbe71ba
+Error Number:209,State:1,Class:16

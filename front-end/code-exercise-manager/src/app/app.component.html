@@ -1,0 +1,41 @@
+@if(isLoggedIn){
+<mat-toolbar
+  class="mat-elevation-z3 d-flex justify-content-between align-items-center px-2"
+  style="height: 50px"
+>
+  <button mat-icon-button (click)="collapsed.set(!collapsed())">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="d-flex align-items-center">
+    <div dropdown class="dropdown me-3">
+      <a dropdownToggle class="dropdown-toggle small-toggle">{{
+        currentUser
+      }}</a>
+      <div *dropdownMenu class="dropdown-menu dropdown-menu-end">
+        <a class="dropdown-item" href="#">Profile</a>
+        <a class="dropdown-item" href="#">Settings</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav
+    [opened]="!collapsed()"
+    mode="side"
+    style="border-radius: 0; width: 15%"
+  >
+    <app-side-menu (menuItemClicked)="collapseSideNav()"></app-side-menu
+  ></mat-sidenav>
+  <mat-sidenav-content>
+    <div class="app-container" style="margin-top: 10px">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+}@else {
+<div class="app-container" style="margin-top: 60px">
+  <router-outlet></router-outlet>
+</div>
+}

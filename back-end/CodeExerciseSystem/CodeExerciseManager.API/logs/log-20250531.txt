@@ -1,0 +1,86 @@
+2025-05-31 19:48:10.096 +07:00 [ERR] An error occurred when getting tags The multi-part identifier "t.CreatedAt" could not be bound.
+The multi-part identifier "t.UpdatedAt" could not be bound.
+The multi-part identifier "t.CreatedById" could not be bound.
+The multi-part identifier "t.UpdatedById" could not be bound.
+The multi-part identifier "p.Title" could not be bound.
+The multi-part identifier "p.CreatedAt" could not be bound.
+The multi-part identifier "p.CreatedAt" could not be bound.
+The multi-part identifier "p.IsDeleted" could not be bound.
+Microsoft.Data.SqlClient.SqlException (0x80131904): The multi-part identifier "t.CreatedAt" could not be bound.
+The multi-part identifier "t.UpdatedAt" could not be bound.
+The multi-part identifier "t.CreatedById" could not be bound.
+The multi-part identifier "t.UpdatedById" could not be bound.
+The multi-part identifier "p.Title" could not be bound.
+The multi-part identifier "p.CreatedAt" could not be bound.
+The multi-part identifier "p.CreatedAt" could not be bound.
+The multi-part identifier "p.IsDeleted" could not be bound.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryMultipleAsync(IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1042
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminGetProblemsAsync(AdminProblemListInDTO filter) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 96
+   at CodeExercise.Application.Services.ProblemService.AdminGetProblemsAsync(AdminProblemListInDTO adminProblemListInDTO) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 41
+ClientConnectionId:87a0a8f6-3f9b-44dd-8530-0a4d0d6eaecf
+Error Number:4104,State:1,Class:16
+2025-05-31 19:51:41.962 +07:00 [ERR] An error occurred when getting tags The multi-part identifier "t.CreatedAt" could not be bound.
+The multi-part identifier "t.UpdatedAt" could not be bound.
+The multi-part identifier "t.CreatedById" could not be bound.
+The multi-part identifier "t.UpdatedById" could not be bound.
+The multi-part identifier "p.IsDeleted" could not be bound.
+Microsoft.Data.SqlClient.SqlException (0x80131904): The multi-part identifier "t.CreatedAt" could not be bound.
+The multi-part identifier "t.UpdatedAt" could not be bound.
+The multi-part identifier "t.CreatedById" could not be bound.
+The multi-part identifier "t.UpdatedById" could not be bound.
+The multi-part identifier "p.IsDeleted" could not be bound.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryMultipleAsync(IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1042
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminGetProblemsAsync(AdminProblemListInDTO filter) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 96
+   at CodeExercise.Application.Services.ProblemService.AdminGetProblemsAsync(AdminProblemListInDTO adminProblemListInDTO) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 41
+ClientConnectionId:87a0a8f6-3f9b-44dd-8530-0a4d0d6eaecf
+Error Number:4104,State:1,Class:16
+2025-05-31 19:52:43.394 +07:00 [ERR] An error occurred when getting tags The multi-part identifier "t.CreatedAt" could not be bound.
+The multi-part identifier "t.UpdatedAt" could not be bound.
+The multi-part identifier "t.CreatedById" could not be bound.
+The multi-part identifier "t.UpdatedById" could not be bound.
+The multi-part identifier "p.IsDeleted" could not be bound.
+Microsoft.Data.SqlClient.SqlException (0x80131904): The multi-part identifier "t.CreatedAt" could not be bound.
+The multi-part identifier "t.UpdatedAt" could not be bound.
+The multi-part identifier "t.CreatedById" could not be bound.
+The multi-part identifier "t.UpdatedById" could not be bound.
+The multi-part identifier "p.IsDeleted" could not be bound.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryMultipleAsync(IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1042
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminGetProblemsAsync(AdminProblemListInDTO filter) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 96
+   at CodeExercise.Application.Services.ProblemService.AdminGetProblemsAsync(AdminProblemListInDTO adminProblemListInDTO) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 41
+ClientConnectionId:1bbe9cac-ad77-4583-9d1b-dfd7972b1cc6
+Error Number:4104,State:1,Class:16
+2025-05-31 19:54:51.414 +07:00 [ERR] An error occurred when getting tags The multi-part identifier "p.IsDeleted" could not be bound.
+Microsoft.Data.SqlClient.SqlException (0x80131904): The multi-part identifier "p.IsDeleted" could not be bound.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryMultipleAsync(IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1042
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminGetProblemsAsync(AdminProblemListInDTO filter) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 96
+   at CodeExercise.Application.Services.ProblemService.AdminGetProblemsAsync(AdminProblemListInDTO adminProblemListInDTO) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 41
+ClientConnectionId:4c0a5473-ad3d-41d7-878c-664a33f9e4ce
+Error Number:4104,State:1,Class:16

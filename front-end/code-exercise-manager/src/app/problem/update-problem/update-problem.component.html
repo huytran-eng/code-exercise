@@ -1,0 +1,418 @@
+<div>
+  <nav aria-label="breadcrumb" class="mb-2">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/">Trang chủ</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Cập nhật bài tập
+      </li>
+    </ol>
+  </nav>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="tab" href="#info"
+        >Thông tin bài tập</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#testcases">Test Cases</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#templateCodes"
+        >Code mẫu</a
+      >
+    </li>
+  </ul>
+
+  <div class="tab-content p-3 border border-top-0" [formGroup]="problemForm">
+    <div class="tab-pane show active" id="info">
+      <div>
+        <div class="row g-3 align-items-center mb-3">
+          <!-- Title -->
+          <div class="col-md-3">
+            <div class="d-flex align-items-center">
+              <label
+                for="title"
+                class="form-label fw-semibold mb-0"
+                style="min-width: 80px"
+                >Tên</label
+              >
+              <input
+                type="text"
+                id="title"
+                class="form-control"
+                formControlName="title"
+                placeholder="Nhập tiêu đề"
+                style="width: 300px"
+                (blur)="validateTitle()"
+              />
+            </div>
+            <div
+              class="text-danger small mt-1"
+              style="margin-inline-start: 80px; height: 1.25rem"
+            >
+              @if(errorMessages['title']) {
+              {{ errorMessages["title"] }}
+              }
+            </div>
+          </div>
+
+          <!-- Time Limit -->
+          <div class="col-md-3">
+            <div class="d-flex align-items-center">
+              <label
+                for="timeLimit"
+                class="form-label fw-semibold mb-0"
+                style="min-width: 150px"
+                >Giới hạn thời gian</label
+              >
+              <input
+                type="number"
+                id="timeLimit"
+                class="form-control"
+                formControlName="timeLimit"
+                placeholder="ms"
+                style="width: 150px"
+                (blur)="validateTimeLimit()"
+              />
+            </div>
+            <div
+              class="text-danger small mt-1"
+              style="margin-inline-start: 150px; height: 1.25rem"
+            >
+              @if(errorMessages['timeLimit']) {
+              <span>{{ errorMessages["timeLimit"] }}</span>
+              }
+            </div>
+          </div>
+
+          <!-- Memory Limit -->
+          <div class="col-md-3">
+            <div class="d-flex align-items-center">
+              <label
+                for="memoryLimit"
+                class="form-label fw-semibold mb-0"
+                style="min-width: 150px"
+                >Giới hạn bộ nhớ</label
+              >
+              <input
+                type="number"
+                id="memoryLimit"
+                class="form-control"
+                formControlName="memoryLimit"
+                placeholder="MB"
+                style="width: 150px"
+                (blur)="validateMemoryLimit()"
+              />
+            </div>
+            <div
+              class="text-danger small mt-1"
+              style="margin-inline-start: 150px; height: 1.25rem"
+            >
+              @if(errorMessages['memoryLimit']) {
+              {{ errorMessages["memoryLimit"] }}
+              }
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="d-flex align-items-center">
+              <label
+                for="difficulty"
+                class="form-label fw-semibold mb-0"
+                style="min-width: 150px"
+                >Mức độ</label
+              >
+              <select
+                id="difficulty"
+                class="form-select"
+                formControlName="difficulty"
+                style="width: 200px"
+              >
+                <option [value]="1">Dễ</option>
+                <option [value]="2">Trung bình</option>
+                <option [value]="3">Khó</option>
+              </select>
+            </div>
+            <div
+              class="text-danger small mt-1"
+              style="margin-inline-start: 150px; height: 1.25rem"
+            ></div>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label
+            for="description"
+            class="form-label fw-semibold"
+            (click)="toggleDescriptionEditor()"
+          >
+            <span
+              class="d-flex align-items-center gap-1"
+              [ngClass]="{ ' fw-bold': showDescriptionEditor }"
+            >
+              <mat-icon>
+                {{ showDescriptionEditor ? "expand_more" : "chevron_right" }}
+              </mat-icon>
+              Nội dung bài tập
+            </span>
+          </label>
+          @if(showDescriptionEditor){
+          <div class="row">
+            <div class="col-md-6">
+              <ckeditor
+                formControlName="description"
+                [editor]="Editor"
+              ></ckeditor>
+            </div>
+            <div class="col-md-6">
+              <div class="ckeditor-container border rounded">
+                <div class="ckeditor-toolbar d-flex align-items-center px-3">
+                  <strong>Preview</strong>
+                </div>
+                <div
+                  class="ckeditor-preview p-3"
+                  [innerHTML]="problemForm.get('description')?.value"
+                ></div>
+              </div>
+            </div>
+          </div>
+          } @if(errorMessages['description']){
+          <div class="text-danger small mt-1">
+            {{ errorMessages["description"] }}
+          </div>
+          }
+        </div>
+        <!-- <div class="mb-4">
+          <label
+            for="description"
+            class="form-label fw-semibold"
+            (click)="toggleTemplateCodeEditor()"
+          >
+            <span
+              class="d-flex align-items-center gap-1"
+              [ngClass]="{ ' fw-bold': showTemplateCodeEditor }"
+            >
+              <mat-icon>{{
+                showTemplateCodeEditor ? "expand_more" : "chevron_right"
+              }}</mat-icon>
+              Code mẫu
+            </span>
+          </label>
+          @if(showTemplateCodeEditor){
+          <div class="row">
+            <div class="col-md-6">
+              <ckeditor
+                formControlName="templateCode"
+                [editor]="Editor"
+              ></ckeditor>
+            </div>
+            <div class="col-md-6">
+              <div class="ckeditor-container border rounded">
+                <div class="ckeditor-toolbar d-flex align-items-center px-3">
+                  <strong>Preview</strong>
+                </div>
+                <div
+                  class="ckeditor-preview p-3"
+                  [innerHTML]="form.get('templateCode')?.value"
+                ></div>
+              </div>
+            </div>
+          </div>
+          } @if(errorMessages['templateCode']){
+          <div class="text-danger small mt-1">
+            {{ errorMessages["templateCode"] }}
+          </div>
+          }
+        </div> -->
+      </div>
+    </div>
+    <div class="tab-pane test-cases-tab" id="testcases">
+      <div>
+        <div formArrayName="testCases">
+          @for (tc of testCases.controls; track $index; let index = $index) {
+          <div [formGroupName]="index" class="card mb-3">
+            <div class="card-header fw-bold d-flex align-items-center">
+              Test case {{ index + 1 }}
+              <button
+                class="btn btn-danger btn-sm ms-auto"
+                (click)="removeTestCase(index)"
+              >
+                {{
+                  tc.get("actionFlag")?.value === ActionFlagEnum.Delete
+                    ? "Thêm lại"
+                    : "Hủy bỏ"
+                }}
+              </button>
+            </div>
+            <div class="card-body">
+              <div class="row mb-2 align-items-center">
+                <div class="col-sm-10 d-flex align-items-center">
+                  <div class="form-check me-3">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      formControlName="isHidden"
+                      id="isHidden{{ index }}"
+                      [attr.disabled]="
+                        tc.get('actionFlag')?.value === ActionFlagEnum.Delete
+                          ? true
+                          : null
+                      "
+                      (input)="onTestCaseChange(index)"
+                    />
+                    <label
+                      class="form-check-label fw-semibold"
+                      for="isHidden{{ index }}"
+                      >Ẩn test case</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-2">
+                <div class="col-sm-6">
+                  <label for="input{{ index }}" class="form-label fw-semibold"
+                    >Đầu vào:</label
+                  >
+                  <textarea
+                    id="input{{ index }}"
+                    formControlName="input"
+                    class="form-control test-case-input"
+                    rows="2"
+                    placeholder="Nhập đầu vào"
+                    [attr.disabled]="
+                      tc.get('actionFlag')?.value === ActionFlagEnum.Delete
+                        ? true
+                        : null
+                    "
+                    (input)="onTestCaseChange(index)"
+                  ></textarea>
+                </div>
+                <div class="col-sm-6">
+                  <label
+                    for="expectedOutput{{ index }}"
+                    class="form-label fw-semibold"
+                    >Đầu ra:</label
+                  >
+                  <textarea
+                    id="expectedOutput{{ index }}"
+                    formControlName="expectedOutput"
+                    class="form-control test-case-input"
+                    rows="2"
+                    placeholder="Nhập đầu ra mong đợi"
+                    [attr.disabled]="
+                      tc.get('actionFlag')?.value === ActionFlagEnum.Delete
+                        ? true
+                        : null
+                    "
+                    (input)="onTestCaseChange(index)"
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="row mb-2">
+                <div class="col-sm-6">
+                  <label
+                    for="inputDisplay{{ index }}"
+                    class="form-label fw-semibold"
+                    >Đầu vào hiển thị:</label
+                  >
+                  <textarea
+                    id="inputDisplay{{ index }}"
+                    formControlName="inputDisplay"
+                    class="form-control test-case-input"
+                    rows="2"
+                    placeholder="Nhập đầu vào sẽ được hiển thị cho người dùng"
+                    [attr.disabled]="
+                      tc.get('actionFlag')?.value === ActionFlagEnum.Delete
+                        ? true
+                        : null
+                    "
+                    (input)="onTestCaseChange(index)"
+                  ></textarea>
+                </div>
+                <div class="col-sm-6">
+                  <label
+                    for="expectedOutputDisplay{{ index }}"
+                    class="form-label fw-semibold"
+                    >Đầu ra hiển thị:</label
+                  >
+                  <textarea
+                    id="expectedOutputDisplay{{ index }}"
+                    formControlName="expectedOutputDisplay"
+                    class="form-control test-case-input"
+                    rows="2"
+                    placeholder="Nhập đầu ra mong đợi sẽ được hiển thị cho người dùng"
+                    [attr.disabled]="
+                      tc.get('actionFlag')?.value === ActionFlagEnum.Delete
+                        ? true
+                        : null
+                    "
+                    (input)="onTestCaseChange(index)"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+
+        <button type="button" class="btn btn-secondary" (click)="addTestCase()">
+          + Thêm test case
+        </button>
+      </div>
+    </div>
+    <div class="tab-pane test-cases-tab" id="templateCodes">
+      <div [formGroup]="problemForm">
+        @if (languages.length > 0) {
+        <select
+          id="language-select"
+          class="form-select w-auto mb-3"
+          [value]="selectedLanguageId()"
+          (change)="onLanguageChange($event)"
+        >
+          @for (lang of languages; track lang.id) {
+          <option [value]="lang.id">{{ lang.displayName }}</option>
+          }
+        </select>
+        <div formArrayName="templateCodes">
+          @for (group of templateCodes.controls; track $index; let index =
+          $index) { @if (group.get('programmingLanguageId')?.value ===
+          selectedLanguageId()) {
+          <div [formGroupName]="index">
+            <div class="mb-4">
+              <label class="form-label">Mã người dùng</label>
+              <ckeditor
+                [editor]="Editor"
+                formControlName="userTemplateCode"
+                (change)="onTemplateCodeChange(index)"
+              ></ckeditor>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label">Hàm main / thực thi</label>
+              <ckeditor
+                [editor]="Editor"
+                formControlName="hiddenTemplateCode"
+                (change)="onTemplateCodeChange(index)"
+              ></ckeditor>
+            </div>
+          </div>
+          }}
+        </div>
+        } @else {
+        <p>Đang tải ngôn ngữ lập trình...</p>
+        }
+      </div>
+    </div>
+  </div>
+
+  <button
+    class="btn btn-primary mt-3"
+    (click)="submit()"
+    [disabled]="problemForm.invalid || hasErrors()"
+  >
+    Cập nhật bài tập
+  </button>
+</div>

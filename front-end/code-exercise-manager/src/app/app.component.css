@@ -1,0 +1,25 @@
+.app-container {
+  width: 90%;
+  margin: 0 auto;
+  max-width: none;
+}
+
+mat-toolbar {
+  position: relative;
+  z-index: 5;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 64px);
+}
+
+.small-toggle {
+  font-size: medium;
+}
+
+.mat-sidenav {
+  width: 250px;
+  background-color: white;
+  border-right: 1px solid #dee2e6;
+  box-shadow:  0 0 10px rgba(0, 0, 0, 0.1);
+}

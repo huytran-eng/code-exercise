@@ -1,0 +1,72 @@
+<div class="create-tag-page">
+  <nav aria-label="breadcrumb" class="mb-2">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/">Trang chủ</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Chi tiết tag</li>
+    </ol>
+  </nav>
+  <fieldset class="border p-3 rounded bg-white p-5 shadow-sm rounded-4 border">
+    <legend class="float-none w-auto px-2">Tạo tag</legend>
+    <form [formGroup]="tagForm">
+      <!-- Name Field -->
+      <div class="mb-4">
+        <label for="name" class="form-label fw-semibold">Tên</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control form-control-lg rounded-3"
+          formControlName="name"
+          placeholder="Nhập tên tag"
+          (blur)="validateName()"
+        />
+        <div *ngIf="errorMessages['name']" class="text-danger small mt-1">
+          {{ errorMessages["name"] }}
+        </div>
+      </div>
+
+      <!-- Display Name Field -->
+      <div class="mb-4">
+        <label for="displayName" class="form-label fw-semibold"
+          >Tên hiển thị</label
+        >
+        <input
+          type="text"
+          id="displayName"
+          class="form-control form-control-lg rounded-3"
+          formControlName="displayName"
+          placeholder="Nhập tên hiển thị"
+          (blur)="validateDisplayName()"
+        />
+        <div class="text-danger small mt-1">
+          @if(errorMessages['displayName']){
+          {{ errorMessages["displayName"] }}
+          }
+        </div>
+      </div>
+
+      <!-- Description Field -->
+      <div class="mb-4">
+        <label for="description" class="form-label fw-semibold">Mô tả</label>
+        <ckeditor
+          id="description"
+          formControlName="description"
+          [editor]="Editor"
+        ></ckeditor>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="text-end mt-4">
+        <button
+          type="submit"
+          class="btn btn-primary btn-lg rounded-pill px-5"
+          (click)="onSubmit()"
+          [disabled]="tagForm.invalid || hasErrors()"
+        >
+          <i class="bi bi-plus-circle me-2"></i> Tạo mới
+        </button>
+      </div>
+    </form>
+  </fieldset>
+</div>

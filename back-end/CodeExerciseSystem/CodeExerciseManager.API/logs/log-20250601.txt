@@ -1,0 +1,60 @@
+2025-06-01 10:50:06.192 +07:00 [ERR] An error occurred when getting tag detail Incorrect syntax near '/'.
+Incorrect syntax near '/'.
+Incorrect syntax near '/'.
+Incorrect syntax near '/'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '/'.
+Incorrect syntax near '/'.
+Incorrect syntax near '/'.
+Incorrect syntax near '/'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryMultipleAsync(IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1042
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminGetProblemDetailByIdAsync(Guid problemId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 224
+   at CodeExercise.Application.Services.ProblemService.AdminGetProblemDetailAsync(Guid problemId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 68
+ClientConnectionId:48a12718-294f-4105-8f3b-f773078154b1
+Error Number:102,State:1,Class:15
+2025-06-01 10:55:25.480 +07:00 [ERR] An error occurred when getting tag detail Incorrect syntax near '/'.
+Incorrect syntax near '/'.
+Incorrect syntax near '/'.
+Incorrect syntax near '/'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '/'.
+Incorrect syntax near '/'.
+Incorrect syntax near '/'.
+Incorrect syntax near '/'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryMultipleAsync(IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1042
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminGetProblemDetailByIdAsync(Guid problemId)
+   at CodeExercise.Application.Services.ProblemService.AdminGetProblemDetailAsync(Guid problemId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 68
+ClientConnectionId:48a12718-294f-4105-8f3b-f773078154b1
+Error Number:102,State:1,Class:15
+2025-06-01 10:56:31.125 +07:00 [ERR] An error occurred when getting tag detail The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+System.ObjectDisposedException: The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+   at Dapper.SqlMapper.GridReader.OnBeforeGrid() in /_/Dapper/SqlMapper.GridReader.cs:line 185
+   at Dapper.SqlMapper.GridReader.ValidateAndMarkConsumed(Type type, Int32& index) in /_/Dapper/SqlMapper.GridReader.Async.cs:line 183
+   at Dapper.SqlMapper.GridReader.ReadAsyncImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.Async.cs:line 169
+   at Dapper.SqlMapper.GridReader.ReadAsync[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.Async.cs:line 107
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminGetProblemDetailByIdAsync(Guid problemId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 267
+   at CodeExercise.Application.Services.ProblemService.AdminGetProblemDetailAsync(Guid problemId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 68
+2025-06-01 10:56:50.145 +07:00 [ERR] An error occurred when getting tag detail The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+System.ObjectDisposedException: The reader has been disposed; this can happen after all data has been consumed
+Object name: 'Dapper.SqlMapper+GridReader'.
+   at Dapper.SqlMapper.GridReader.OnBeforeGrid() in /_/Dapper/SqlMapper.GridReader.cs:line 185
+   at Dapper.SqlMapper.GridReader.ValidateAndMarkConsumed(Type type, Int32& index) in /_/Dapper/SqlMapper.GridReader.Async.cs:line 183
+   at Dapper.SqlMapper.GridReader.ReadAsyncImpl[T](Type type, Boolean buffered) in /_/Dapper/SqlMapper.GridReader.Async.cs:line 169
+   at Dapper.SqlMapper.GridReader.ReadAsync[T](Boolean buffered) in /_/Dapper/SqlMapper.GridReader.Async.cs:line 107
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.AdminGetProblemDetailByIdAsync(Guid problemId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 267
+   at CodeExercise.Application.Services.ProblemService.AdminGetProblemDetailAsync(Guid problemId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 68

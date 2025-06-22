@@ -1,0 +1,14 @@
+2025-03-06 22:16:20.415 +07:00 [ERR] An error occurred during login for user: admin
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'User'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryRowAsync[T](IDbConnection cnn, Row row, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 489
+   at CodeExercise.Infrastructure.Persistence.Repositories.UserRepository.GetUserByUsernameAsync(String username) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\UserRepository.cs:line 19
+   at CodeExercise.Application.Services.UserService.LoginAsync(LoginRequestDTO loginRequest) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\UserService.cs:line 32
+ClientConnectionId:56416108-39ca-4559-9f96-d72f3c408e29
+Error Number:156,State:1,Class:15

@@ -1,0 +1,28 @@
+2025-04-27 22:03:40.231 +07:00 [ERR] An error occurred when getting tags Must declare the scalar variable "@Name".
+Microsoft.Data.SqlClient.SqlException (0x80131904): Must declare the scalar variable "@Name".
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at CodeExercise.Infrastructure.Persistence.Repositories.MenuItemRepository.GetMenuItemListForAdmin() in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\MenuItemRepository.cs:line 24
+   at CodeExercise.Application.Services.MenuItemService.GetAdminMenuItemList() in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\MenuItemService.cs:line 27
+ClientConnectionId:c11eff73-b3e6-4f1a-8140-21100e71db3a
+Error Number:137,State:2,Class:15
+2025-04-27 22:05:44.852 +07:00 [ERR] An error occurred when getting tags Must declare the scalar variable "@Name".
+Microsoft.Data.SqlClient.SqlException (0x80131904): Must declare the scalar variable "@Name".
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at CodeExercise.Infrastructure.Persistence.Repositories.MenuItemRepository.GetMenuItemListForAdmin() in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\MenuItemRepository.cs:line 24
+   at CodeExercise.Application.Services.MenuItemService.GetAdminMenuItemList() in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\MenuItemService.cs:line 27
+ClientConnectionId:c11eff73-b3e6-4f1a-8140-21100e71db3a
+Error Number:137,State:2,Class:15

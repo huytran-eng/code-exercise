@@ -1,0 +1,5 @@
+<mat-nav-list>
+  @for(menuItem of menuItems; track menuItem.id){
+  <app-menu-item [item]="menuItem" [level]="0" (childItemClicked)="onChilItemClicked()"></app-menu-item>
+  }
+</mat-nav-list>

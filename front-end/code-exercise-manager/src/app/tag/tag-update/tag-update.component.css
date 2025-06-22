@@ -1,0 +1,8 @@
+
+:host ::ng-deep .ck-editor__editable {
+    min-height: 200px;
+    border: 1px solid #ced4da; /* Light grey border */
+    border-radius: 4px;
+    padding: 0.5rem; /* Padding inside the editor */
+  }
+  

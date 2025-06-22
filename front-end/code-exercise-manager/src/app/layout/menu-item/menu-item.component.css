@@ -1,0 +1,14 @@
+.mdc-list-item.mdc-list-item--with-one-line {
+  height: 30px !important;
+  border-radius: 0px !important;
+}
+
+.mdc-list-item.mdc-list-item--with-one-line::before {
+    background-color: white;
+}
+.mdc-list-item.mdc-list-item--with-one-line::after {
+    background-color: white;
+}
+.mdc-list-item.mdc-list-item--with-one-line:hover {
+    background-color: rgb(235, 227, 227);
+}

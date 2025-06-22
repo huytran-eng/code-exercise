@@ -1,0 +1,30 @@
+<a
+  mat-list-item
+  class="menu-item"
+  [class.active]="rla.isActive || hasActiveChild()"
+  [style.padding-left]="indentation()"
+  [style.font-size]="indentation()"
+  [routerLink]="item().menuUrl"
+  (click)="item().childItems ? toggleNested() : onChildItemClick()"
+  routerLinkActive="active"
+  #rla="routerLinkActive"
+  [activated]="rla.isActive || (hasActiveChild() && !nestedMenuOpen())"
+>
+  <span mat-line>{{ item().menuDisplayName }}</span>
+  @if (this.item().childItems.length > 0) {
+  <span matListItemMeta>
+    @if(nestedMenuOpen()){
+    <mat-icon>expand_less</mat-icon>
+    }@else{
+    <mat-icon>expand_more</mat-icon>}
+  </span>
+  }
+</a>
+
+@if(item().childItems && nestedMenuOpen()){
+<div>
+  @for(childItem of item().childItems; track childItem.id){
+  <app-menu-item [item]="childItem" [level]="level() + 1"></app-menu-item>
+  }
+</div>
+}

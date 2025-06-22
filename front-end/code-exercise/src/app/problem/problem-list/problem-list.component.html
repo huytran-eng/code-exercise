@@ -1,0 +1,82 @@
+<div class="container">
+  <form
+    [formGroup]="problemForm"
+    (ngSubmit)="onSearch()"
+    class="mb-3 d-flex align-items-center gap-2"
+  >
+    <input
+      type="text"
+      formControlName="title"
+      class="form-control"
+      placeholder="Tìm kiếm theo tên bài toán"
+      style="max-width: 300px"
+    />
+    <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+  </form>
+  <div class="datagrid-area">
+    @if(problemService.paginatedResult()) {
+
+    <div class="table-container">
+      <table class="table table-striped table-hover">
+        <tbody>
+          @for (problem of problemService.paginatedResult()?.data; track
+          problem.id) {
+          <tr (click)="onRowClick(problem.slug)" style="cursor: pointer">
+            <td>{{ problem.title }}</td>
+            <td>
+              {{
+                problem.difficulty === 1
+                  ? "Dễ"
+                  : problem.difficulty === 2
+                  ? "Trung bình"
+                  : "Khó"
+              }}
+            </td>
+          </tr>
+          } @empty {
+          <tr>
+            <td colspan="8" style="text-align: center">Không có dữ liệu</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="d-flex justify-content-between align-items-center mb-3 mt-3">
+      <div class="d-flex align-items-center ms-2">
+        <label for="pageSize" class="form-label me-2 mb-0">Số bản ghi:</label>
+        <select
+          id="pageSize"
+          class="form-select w-auto"
+          [(ngModel)]="pageSize"
+          (change)="onPageSizeChange()"
+        >
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+
+      <div class="text-end me-2">
+        Hiển thị {{ problemService.paginatedResult()!.data.length }} trên tổng
+        số {{ problemService.paginatedResult()!.totalCount }} bản ghi
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <pagination
+        [boundaryLinks]="true"
+        [totalItems]="problemService.paginatedResult()!.totalCount"
+        [itemsPerPage]="pageSize"
+        (pageChanged)="pageChanged($event)"
+        [maxSize]="10"
+        [(ngModel)]="pageNumber"
+        previousText="&lsaquo;"
+        nextText="&rsaquo;"
+        firstText="&laquo;"
+        lastText="&raquo;"
+      >
+      </pagination>
+    </div>
+    }
+  </div>
+</div>

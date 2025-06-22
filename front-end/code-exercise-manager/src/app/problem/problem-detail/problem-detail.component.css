@@ -1,0 +1,29 @@
+.input-like-box p {
+  display: block;
+  margin-bottom: 1em;
+  white-space: normal;
+  background-color: white;
+}
+
+.test-case-input {
+  min-height: 150px;
+  overflow-y: auto;
+}
+
+.tab-pane {
+  min-height: 680px;
+}
+
+.template-code-tab {
+  max-height: 680px;
+  overflow-y: auto;
+}
+
+.test-cases-tab {
+  max-height: 680px;
+  overflow-y: auto;
+}
+.tab-content {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}

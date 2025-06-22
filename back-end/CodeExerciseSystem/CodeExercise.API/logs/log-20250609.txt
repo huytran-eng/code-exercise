@@ -1,0 +1,34 @@
+2025-06-09 20:48:26.037 +07:00 [ERR] An error occurred when getting tags Incorrect syntax near the keyword 'ELSE'.
+Invalid usage of the option NEXT in the FETCH statement.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near the keyword 'ELSE'.
+Invalid usage of the option NEXT in the FETCH statement.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryMultipleAsync(IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1042
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.UserGetProblemsAsync(UserProblemListInDTO filter, Nullable`1 userId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 433
+   at CodeExercise.Application.Services.ProblemService.UserGetProblemsAsync(UserProblemListInDTO filter, Nullable`1 userId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 285
+ClientConnectionId:6e312ebb-ba7e-40c2-8539-c047c2401b68
+Error Number:156,State:1,Class:15
+2025-06-09 20:56:08.936 +07:00 [ERR] An error occurred when getting tags Incorrect syntax near '@Title'.
+Invalid usage of the option NEXT in the FETCH statement.
+Incorrect syntax near '@Title'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '@Title'.
+Invalid usage of the option NEXT in the FETCH statement.
+Incorrect syntax near '@Title'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryMultipleAsync(IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1042
+   at CodeExercise.Infrastructure.Persistence.Repositories.ProblemRepository.UserGetProblemsAsync(UserProblemListInDTO filter, Nullable`1 userId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\ProblemRepository.cs:line 439
+   at CodeExercise.Application.Services.ProblemService.UserGetProblemsAsync(UserProblemListInDTO filter, Nullable`1 userId) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\ProblemService.cs:line 285
+ClientConnectionId:be470677-4ce1-4f82-9358-f9981f3238e7
+Error Number:102,State:1,Class:15

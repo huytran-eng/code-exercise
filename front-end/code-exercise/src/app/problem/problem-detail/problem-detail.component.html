@@ -1,0 +1,104 @@
+<div class="resizable-container">
+  <!-- Left Pane -->
+  <div class="left-pane">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-bs-toggle="tab" href="#description"
+          >Mô tả</a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="tab" href="#submissions"
+          >Các lần nộp</a
+        >
+      </li>
+    </ul>
+    @if(problem){
+    <div class="tab-content p-3 border-top-0">
+      <div class="tab-pane fade show active" id="description">
+        <h3>{{ problem.title }}</h3>
+        <div [innerHTML]="problem.description"></div>
+      </div>
+      <div class="tab-pane fade" id="submissions">
+        <ul>
+          <li>submission 1</li>
+          <li>submission 2</li>
+          <li>submission 3</li>
+          <li>submission 4</li>
+        </ul>
+      </div>
+    </div>
+    }
+  </div>
+
+  <!-- Resizer -->
+  <div class="resizer"></div>
+
+  <!-- Right Code Editor -->
+  <div class="right-pane">
+    <!-- Language selector -->
+    <div class="d-flex align-items-center gap-2 p-2">
+      <label for="language-select" class="form-label mb-0">Language:</label>
+      <select
+        id="language-select"
+        class="form-select w-auto"
+        [value]="selectedLanguageId()"
+        (change)="onLanguageChange($event)"
+      >
+        @for (lang of languages; track lang.programmingLanguageId) {
+        <option [value]="lang.programmingLanguageId">{{ lang.displayName }}</option>
+        }
+      </select>
+    </div>
+
+    <!-- Editor + Resizer + Testcases -->
+    <div class="code-and-testcase-container" style="height: 100%">
+      <div class="code-area">
+        <ngx-monaco-editor
+          #editor
+          [options]="editorOptions"
+          [formControl]="codeControl"
+          style="height: 100%; width: 100%"
+        ></ngx-monaco-editor>
+      </div>
+
+      <div class="resizer-horizontal"></div>
+
+      <div class="testcase-tabs">
+        <div class="p-2 rounded bg-light">Test Case</div>
+        <ul class="nav nav-tabs">
+          @for(testcase of problem?.testCases; track testcase.id; let idx =
+          $index){
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [class.active]="selectedCaseIndex === idx"
+              (click)="selectCase(idx)"
+            >
+              Case {{ idx + 1 }}
+            </a>
+          </li>
+          }
+        </ul>
+        <div class="p-1 rounded" style="height: 100%">
+          @if(selectedCase){
+          <div class="mb-3">
+            <strong>Input:</strong>
+            <pre class="bg-light p-2 rounded">{{
+              selectedCase.inputDisplay
+            }}</pre>
+          </div>
+
+          <!-- Display expected output -->
+          <div class="mb-3">
+            <strong>Expected Output:</strong>
+            <pre class="bg-light p-2 rounded">{{
+              selectedCase.expectedOutputDisplay
+            }}</pre>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

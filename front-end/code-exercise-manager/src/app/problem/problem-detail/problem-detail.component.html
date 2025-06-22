@@ -1,0 +1,197 @@
+<div>
+  <!-- Breadcrumb Navigation -->
+  <nav aria-label="breadcrumb" class="mb-2">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/">Trang chủ</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Chi tiết bài tập
+      </li>
+    </ol>
+  </nav>
+
+  <!-- Tabs Navigation -->
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" data-bs-toggle="tab" href="#info"
+        >Thông tin bài tập</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#testcases">Test Cases</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-bs-toggle="tab" href="#templateCodes"
+        >Code mẫu</a
+      >
+    </li>
+  </ul>
+
+  @if(loading()){
+  <div class="d-flex justify-content-center mb-4">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  }
+  <!-- Tag details if data exists -->
+  @if(problem){
+  <div class="tab-content p-3 border border-top-0">
+    <div class="text-end mt-4 d-flex justify-content-end gap-2">
+      <a
+        [routerLink]="['/problem/update', problem.id]"
+        class="btn btn-primary btn-sm rounded-pill px-4"
+      >
+        <i class="bi bi-pencil-square me-2"></i> Cập nhật
+      </a>
+      <button
+        class="btn btn-danger btn-sm rounded-pill px-4"
+        (click)="onDeleteProblem(problem.id)"
+        type="button"
+      >
+        <i class="bi bi-trash me-2"></i> Xóa
+      </button>
+    </div>
+    <!-- Problem Information Tab -->
+    <div class="tab-pane show active" id="info">
+      <div class="row g-3 align-items-center mb-3">
+        <!-- Title -->
+        <div class="col-md-3">
+          <label class="form-label fw-semibold mb-0" style="min-width: 80px"
+            >Tên</label
+          >
+          <div>{{ problem.title }}</div>
+        </div>
+
+        <!-- Time Limit -->
+        <div class="col-md-3">
+          <label class="form-label fw-semibold mb-0" style="min-width: 150px"
+            >Giới hạn thời gian</label
+          >
+          <div>{{ problem.timeLimit }} giây</div>
+        </div>
+
+        <!-- Memory Limit -->
+        <div class="col-md-3">
+          <label class="form-label fw-semibold mb-0" style="min-width: 150px"
+            >Giới hạn bộ nhớ</label
+          >
+          <div>{{ problem.memoryLimit }} MB</div>
+        </div>
+
+        <!-- Difficulty -->
+        <div class="col-md-3">
+          <label class="form-label fw-semibold mb-0" style="min-width: 150px"
+            >Mức độ</label
+          >
+          <div>
+            {{
+              problem.difficulty === 1
+                ? "Dễ"
+                : problem.difficulty === 2
+                ? "Trung bình"
+                : "Khó"
+            }}
+          </div>
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="mb-4">
+        <label class="form-label fw-semibold">Nội dung bài tập</label>
+        <div
+          class="input-like-box flex-grow-1 px-3 py-2 rounded-3 border"
+          style="max-height: 500px; overflow-y: auto; background-color: white"
+          [innerHTML]="problem.description"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Test Cases Tab -->
+    <div class="tab-pane test-cases-tab" id="testcases">
+      @for(tc of problem.testCases; track tc.id; let index = $index;){
+      <div class="card mb-3">
+        <div class="card-header fw-bold d-flex align-items-center">
+          Test case {{ index + 1 }}
+          <span class="ms-auto text-muted">
+            {{ tc.isHidden ? "Ẩn" : "Hiển thị" }}
+          </span>
+        </div>
+        <div class="card-body">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <label class="form-label fw-semibold">Đầu vào:</label>
+              <pre class="form-control">{{ tc.input }}</pre>
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label fw-semibold">Đầu ra:</label>
+              <pre class="form-control">{{ tc.expectedOutput }}</pre>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-sm-6">
+              <label class="form-label fw-semibold">Đầu vào hiển thị:</label>
+              <pre class="form-control">{{ tc.inputDisplay }}</pre>
+            </div>
+            <div class="col-sm-6">
+              <label class="form-label fw-semibold">Đầu ra hiển thị:</label>
+              <pre class="form-control">{{ tc.expectedOutputDisplay }}</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+
+    <div class="tab-pane template-code-tab" id="templateCodes">
+      <select
+        id="language-select"
+        class="form-select w-auto mb-3"
+        [value]="selectedLanguageId()"
+        (change)="onLanguageChange($event)"
+      >
+        @for (lang of languages; track lang.id) {
+        <option [value]="lang.id">{{ lang.label }}</option>
+        }
+      </select>
+      @for (tc of problem.templateCodes; track tc.id;) { @if
+      (tc.programmingLanguageId === selectedLanguageId()) {
+      <div class="card mb-3">
+        <div class="card-header fw-bold">
+          {{ tc.programmingLanguageDisplayName || tc.programmingLanguageName }}
+        </div>
+        <div class="card-body">
+          <!-- User Template Code -->
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Mã người dùng:</label>
+            <div
+              class="form-control"
+              style="white-space: pre-wrap"
+              [innerHTML]="tc.userTemplateCode"
+            ></div>
+          </div>
+
+          <!-- Hidden Template Code -->
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Hàm main / thực thi:</label>
+            <div
+              class="form-control"
+              style="white-space: pre-wrap"
+              [innerHTML]="tc.hiddenTemplateCode"
+            ></div>
+          </div>
+        </div>
+      </div>
+      } }
+    </div>
+  </div>
+  } @else{
+  <!-- No tag data available -->
+  <div>
+    <div class="alert alert-info m-3">
+      <p class="mb-0">Đang tải thông tin chi tiết...</p>
+    </div>
+  </div>
+  }
+</div>

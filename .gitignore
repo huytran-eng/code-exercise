@@ -1,0 +1,17 @@
+# === Node.js & Angular ===
+node_modules/
+dist/
+.env
+.angular/
+package-lock.json
+
+# === .NET ===
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vs/
+.vscode/
+

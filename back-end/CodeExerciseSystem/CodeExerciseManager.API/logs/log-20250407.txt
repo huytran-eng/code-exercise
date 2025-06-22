@@ -1,0 +1,43 @@
+2025-04-07 13:34:10.885 +07:00 [ERR] An error occurred when getting tags Ambiguous column name 'CreatedById'.
+Ambiguous column name 'UpdatedById'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Ambiguous column name 'CreatedById'.
+Ambiguous column name 'UpdatedById'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 434
+   at CodeExercise.Infrastructure.Persistence.Repositories.TagRepository.GetTagsAsync(AdminTagListInDTO filter) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\TagRepository.cs:line 56
+   at CodeExercise.Application.Services.TagService.GetTags(AdminTagListInDTO adminTagListInDTO) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\TagService.cs:line 75
+ClientConnectionId:33a5dd6b-dcd9-49a4-9698-c3542d559e21
+Error Number:209,State:1,Class:16
+2025-04-07 17:48:27.579 +07:00 [ERR] An error occurred when getting tags Ambiguous column name 'Name'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Ambiguous column name 'Name'.
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryMultipleAsync(IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1042
+   at CodeExercise.Infrastructure.Persistence.Repositories.TagRepository.GetTagsAsync(AdminTagListInDTO filter) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\TagRepository.cs:line 63
+   at CodeExercise.Application.Services.TagService.GetTags(AdminTagListInDTO adminTagListInDTO) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\TagService.cs:line 75
+ClientConnectionId:a6c4272d-1074-4799-8790-91c32bfee588
+Error Number:209,State:1,Class:16
+2025-04-07 17:49:51.947 +07:00 [ERR] An error occurred when getting tags Ambiguous column name 'Name'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Ambiguous column name 'Name'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Dapper.SqlMapper.QueryMultipleAsync(IDbConnection cnn, CommandDefinition command) in /_/Dapper/SqlMapper.Async.cs:line 1042
+   at CodeExercise.Infrastructure.Persistence.Repositories.TagRepository.GetTagsAsync(AdminTagListInDTO filter) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Infrastructure\Persistence\Repositories\TagRepository.cs:line 63
+   at CodeExercise.Application.Services.TagService.GetTags(AdminTagListInDTO adminTagListInDTO) in C:\Users\h\Desktop\CodeExercise\back-end\CodeExerciseSystem\CodeExercise.Application\Services\TagService.cs:line 75
+ClientConnectionId:64503a2d-139f-4b57-ad8c-6d1f580e9fb7
+Error Number:209,State:1,Class:16

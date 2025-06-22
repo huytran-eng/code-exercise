@@ -1,0 +1,181 @@
+<div class="search-page">
+  <nav aria-label="breadcrumb" class="mb-2">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/">Trang chủ</a>
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Danh sách tag</li>
+    </ol>
+  </nav>
+  <div class="search-filter mb-4">
+    <fieldset class="border p-3 rounded">
+      <legend class="float-none w-auto px-2">Tìm kiếm</legend>
+      <form [formGroup]="tagForm" (ngSubmit)="onSearch()" class="row g-3">
+        <div class="row">
+          <div class="col-md-5 form-inline">
+            <label for="name" class="form-label">Tên</label>
+            <input
+              type="text"
+              id="name"
+              class="form-control form-control"
+              formControlName="name"
+              name="name"
+              width="60%"
+              placeholder="Nhập tên"
+            />
+          </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-5 form-inline">
+            <label for="displayName" class="form-label me-2"
+              >Tên hiển thị</label
+            >
+            <input
+              type="text"
+              id="displayName"
+              class="form-control form-control"
+              name="displayName"
+              formControlName="displayName"
+              placeholder="Nhập tên hiển thị"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-5 form-inline">
+            <label class="form-label">Thời gian</label>
+            <input
+              id="fromDate"
+              type="text"
+              placeholder="Từ ngày"
+              class="form-control form-control"
+              bsDatepicker
+              [bsConfig]="{
+                dateInputFormat: 'DD/MM/YYYY',
+                containerClass: 'theme-dark-blue'
+              }"
+              formControlName="fromDate"
+              name="fromDate"
+            />
+            <input
+              id="toDate"
+              type="text"
+              placeholder="Đến ngày"
+              class="form-control form-control"
+              bsDatepicker
+              [bsConfig]="{
+                dateInputFormat: 'DD/MM/YYYY',
+                containerClass: 'theme-dark-blue'
+              }"
+              name="toDate"
+              formControlName="toDate"
+            />
+          </div>
+          <div class="col-md-1"></div>
+
+          <div class="col-md-5 form-inline">
+            <label for="sortBy" class="form-label me-2">Sắp xếp theo</label>
+            <select
+              id="sortBy"
+              class="form-select form-select"
+              name="sortBy"
+              formControlName="orderBy"
+              width="60%"
+            >
+              <option [ngValue]="null">----</option>
+              <option value="1">Tên</option>
+              <option value="2">Tên hiển thị</option>
+              <option value="3">Ngày tạo</option>
+              <option value="4">Ngày cập nhật cuối</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-12 text-end">
+          <button
+            type="button"
+            class="btn btn-secondary me-2 btn"
+            (click)="onClear()"
+          >
+            Xóa bộ lọc
+          </button>
+          <button type="submit" class="btn btn-primary btn">Tìm kiếm</button>
+        </div>
+      </form>
+    </fieldset>
+  </div>
+
+  <div class="datagrid-area">
+    @if(tagService.paginatedResult()) {
+    <div class="d-flex justify-content-between align-items-center mb-3 mt-3">
+      <div class="d-flex align-items-center ms-2">
+        <label for="pageSize" class="form-label me-2 mb-0">Số bản ghi:</label>
+        <select
+          id="pageSize"
+          class="form-select w-auto"
+          [(ngModel)]="pageSize"
+          (change)="onPageSizeChange()"
+        >
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+
+      <div class="text-end me-2">
+        Hiển thị {{ tagService.paginatedResult()!.data.length }} trên tổng số
+        {{ tagService.paginatedResult()!.totalCount }} bản ghi
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <pagination
+        [boundaryLinks]="true"
+        [totalItems]="tagService.paginatedResult()!.totalCount"
+        [itemsPerPage]="pageSize"
+        (pageChanged)="pageChanged($event)"
+        [maxSize]="10"
+        [(ngModel)]="pageNumber"
+        previousText="&lsaquo;"
+        nextText="&rsaquo;"
+        firstText="&laquo;"
+        lastText="&raquo;"
+      >
+      </pagination>
+    </div>
+    <div class="table-container">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Tên</th>
+            <th scope="col">Tên hiển thị</th>
+            <th scope="col">Ngày tạo</th>
+            <th scope="col">Người tạo</th>
+            <th scope="col">Ngày cập nhật cuối</th>
+            <th scope="col">Người cập nhật</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (tag of tagService.paginatedResult()?.data ; track tag.id) {
+          <tr (click)="onRowClick(tag.id)" style="cursor: pointer">
+            <td>{{ tag.name }}</td>
+
+            <td>{{ tag.displayName }}</td>
+            <td>{{ tag.createdAt | date : "dd/MM/yyyy" }}</td>
+            <td>{{ tag.createdByName }}</td>
+            <td>
+              {{
+                tag.updatedAt ? (tag.updatedAt | date : "dd/MM/yyyy") : "N/A"
+              }}
+            </td>
+            <td>{{ tag.updatedByName || "N/A" }}</td>
+          </tr>
+          } @empty {
+          <tr>
+            <td colspan="6" style="text-align: center"></td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    }
+  </div>
+</div>

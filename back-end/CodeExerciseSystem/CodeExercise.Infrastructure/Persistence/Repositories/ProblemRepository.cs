@@ -505,6 +505,7 @@ namespace CodeExercise.Infrastructure.Persistence.Repositories
 		                            ,tplc.[UserTemplateCode]
 		                            ,tplc.[ProgrammingLanguageId]
 		                            ,pl.[DisplayName] as ProgrammingLanguageDisplayName
+		                            ,pl.[Name] as ProgrammingLanguageName
                             FROM TemplateCode tplc
 	                            INNER JOIN [Problem] p ON p.Id = tplc.ProblemId
 	                            INNER JOIN [ProgrammingLanguage] pl on pl.Id = tplc.ProgrammingLanguageId

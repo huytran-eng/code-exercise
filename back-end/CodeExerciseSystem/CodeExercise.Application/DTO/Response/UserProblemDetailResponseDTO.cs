@@ -27,6 +27,7 @@ namespace CodeExercise.Application.DTO.Response
         public string UserTemplateCode { get; set; }
         public Guid ProgrammingLanguageId { get; set; }
         public string ProgrammingLanguageDisplayName { get; set; }
+        public string ProgrammingLanguageName { get; set; }
 
     }
 }

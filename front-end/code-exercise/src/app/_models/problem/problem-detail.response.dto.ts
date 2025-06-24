@@ -22,4 +22,6 @@ export interface TemplateCodeDTO {
   userTemplateCode: string;
   programmingLanguageId: string;
   programmingLanguageDisplayName: string;
+  programmingLanguageName: string;
+
 }
